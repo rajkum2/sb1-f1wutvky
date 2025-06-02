@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --power-apps-primary: #0078d4;
+  --power-apps-primary-dark: #106ebe;
+  --power-apps-secondary: #505050;
+  --power-apps-background: #f5f5f5;
+  --power-apps-card: #ffffff;
+  --power-apps-border: #e0e0e0;
+  --power-apps-success: #107c10;
+  --power-apps-warning: #ffb900;
+  --power-apps-error: #d13438;
+  --power-apps-info: #0078d4;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--power-apps-background);
+  color: var(--power-apps-secondary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Power Apps Style Components */
+@layer components {
+  .pa-container {
+    @apply p-4 max-w-screen-2xl mx-auto;
+  }
+  
+  .pa-card {
+    @apply bg-white rounded-md shadow-sm border border-[var(--power-apps-border)];
+  }
+  
+  .pa-header {
+    @apply bg-[var(--power-apps-primary)] text-white p-4 flex justify-between items-center;
+  }
+  
+  .pa-button {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+  
+  .pa-button-primary {
+    @apply bg-[var(--power-apps-primary)] hover:bg-[var(--power-apps-primary-dark)] text-white;
+  }
+  
+  .pa-button-secondary {
+    @apply bg-white border border-[var(--power-apps-secondary)] text-[var(--power-apps-secondary)] hover:bg-gray-100;
+  }
+  
+  .pa-form-group {
+    @apply mb-4;
+  }
+  
+  .pa-label {
+    @apply block text-sm font-medium mb-1;
+  }
+  
+  .pa-input {
+    @apply w-full px-3 py-2 border border-[var(--power-apps-border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--power-apps-primary)] focus:border-transparent;
+  }
+  
+  .pa-select {
+    @apply w-full px-3 py-2 border border-[var(--power-apps-border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--power-apps-primary)] focus:border-transparent bg-white;
+  }
+  
+  .pa-table {
+    @apply w-full border-collapse;
+  }
+  
+  .pa-table th {
+    @apply bg-[var(--power-apps-primary)] text-white p-2 text-left;
+  }
+  
+  .pa-table tr:nth-child(even) {
+    @apply bg-gray-50;
+  }
+  
+  .pa-table td {
+    @apply p-2 border-b border-[var(--power-apps-border)];
+  }
+  
+  .pa-gallery {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+  
+  .pa-gallery-item {
+    @apply pa-card p-4 cursor-pointer hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .pa-status {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .pa-status-new {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .pa-status-inprogress {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .pa-status-completed {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .pa-status-review {
+    @apply bg-purple-100 text-purple-800;
+  }
+
+  .pa-command-bar {
+    @apply flex space-x-2 p-2 bg-gray-100 border-b border-[var(--power-apps-border)];
+  }
+}
